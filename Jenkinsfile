@@ -1,10 +1,10 @@
 pipeline {
     agent any
     environment {
-            DOCKER_TOKEN = credentials('docker-push-secret')
-            DOCKER_USER = 'tsadimas'
+            DOCKER_TOKEN = credentials('git-hub-apoangelis')
+            DOCKER_USER = 'aangelis'
             DOCKER_SERVER = 'ghcr.io'
-            DOCKER_PREFIX = 'ghcr.io/tsadimas/pms8-fastapi'
+            DOCKER_PREFIX = 'ghcr.io/aangelis/pms8-fastapi'
         }
         
 
