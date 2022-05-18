@@ -16,7 +16,7 @@ pipeline {
                     cp app/.env.example app/.env
                     docker-compose kill -s SIGINT
                     docker-compose up -d --build
-                    docker-compose exec fastapi wget -S --spider http://localhost:8000/docs
+                    while ! docker-compose exec fastapi wget -S --spider http://localhost:8000/docs ; do sleep 1; done
                     docker-compose exec fastapi pytest
                     docker-compose down --volumes
                 '''
